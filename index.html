@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎄 Ton Cadeau de Noël 🎄</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+   <!-- Audio principal -->
+    <audio id="xmasMusic" src="Silent-night.mp3" loop></audio>
+
+    <!-- Intro vidéo -->
+    <div id="intro" class="screen">
+    <video id="introVideo" autoplay muted playsinline loop>
+        <source src="video-intro.mp4" type="video/mp4">
+    </video>
+
+    <div class="intro-overlay">
+        <h1>🎄 Joyeux Noël Théo 🎄</h1>
+        <p>Un cadeau t’attend…</p>
+    </div>
+</div>
+
+
+    <div id="welcome" class="screen active">
+        <h1>🎅 Joyeux Noël Théo ! 🎄</h1>
+        <p>Tu as reçu un cadeau mystère...</p>
+        <p>Es-tu prêt à le découvrir ? 🎁</p>
+        <button class="btn" onclick="startExperience()">Commencer le jeu !</button>
+    </div>
+
+    <!-- Jeu attrape bières -->
+    <div id="game" class="screen">
+        <div id="score">Bières attrapées : <span id="scoreValue">0</span> / 10</div>
+        <div id="gameInstructions">Déplace ton panier avec la souris pour attraper 10 bières ! 🍺</div>
+        <div id="gameArea">
+            <div id="basket">🧺</div>
+        </div>
+    </div>
+
+    <!-- Énigme -->
+    <div id="riddle" class="screen">
+        <h2>🎯 SUPER ! Dernière étape !</h2>
+        <p>Pour découvrir ton cadeau, résouds cette énigme :</p>
+        <p><strong>"Notre lien naît d'une promesse prononcée ailleurs, et pourtant il me rapproche de toi.<br>
+        Qui suis-je ?"</strong></p>
+        <input type="text" id="riddleInput" placeholder="Entre ton idée...">
+        <br>
+        <button class="btn" onclick="checkAnswer()">Valider</button>
+        <p id="riddleHint" style="color: yellow; margin-top: 15px;"></p>
+    </div>
+
+    <!-- Révélation du cadeau AMÉLIORÉE -->
+    <div id="reveal" class="screen">
+        <h2>🎉 BRAVO THÉO ! 🎉</h2>
+        <div class="gift-icon">🍺✨</div>
+        
+        <div class="gift-voucher">
+        
+            <img src="bon-cadeau.png" alt="Bon cadeau">
+            
+            <h3>🍻 Atelier de Dégustation "Mets et Bières" 🍻</h3>
+            <p>Prépare tes papilles pour une expérience unique !</p>
+            <p>Tu vas découvrir des saveurs exceptionnelles et apprendre tous les secrets du brassage.</p>
+            
+            <div class="dates-info">
+                <p><strong>🎊 Ce n'est pas tout ! 🎊</strong></p>
+                <p>Tu pourras réaliser cet atelier avec <strong>Lucas</strong> !</p>
+                <p><strong>Créneaux disponibles :</strong></p>
+                <p>📅 23/01 de 18h à 20h30<br>
+                   📅 06/03 de 18h à 20h30<br>
+                   📅 20/03 de 18h à 20h30</p>
+                <p style="margin-top: 15px; color: #c41e3a; font-weight: bold;">Amusez-vous bien ! 🎉</p>
+            </div>
+        </div>
+
+        <div class="message">
+            <p style="font-style: italic; font-size: 1.3em;">
+                Joyeux Noël de la part de Stéphie ! 🎄❤️
+            </p>
+        </div>
+        <div class="final-actions">
+    <button class="btn btn-secondary" onclick="goHome()">🏠 Retour à l’accueil</button>
+    <button class="btn btn-secondary" onclick="replayGame()">🔁 Rejouer</button>
+</div>
+
+    </div>
+
+    <!-- Décorations -->
+    <img class="deco deco-left" src="deco.jpeg" alt="Décoration" />
+    <img class="deco deco-right" src="deco.jpeg" alt="Décoration" />
+
+    <!-- Canvas neige -->
+    <canvas id="snow"></canvas>
+    
+    <!-- Canvas paillettes -->
+    <canvas id="confetti"></canvas>
+
+</body>
+</html>
